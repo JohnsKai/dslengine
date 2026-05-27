@@ -1,0 +1,24 @@
+# 项目当前状态：正在从 JsonNode/Map 模式重构为 DTO 强类型模式。
+# 代码规范：
+- 所有规则定义必须使用 DTO 类（如 RuleDefinition, NodeDefinition），不允许在业务代码中直接使用 JsonNode 或 Map 作为配置载体。
+- DTO 类放在 `com.iot.engine.dto` 包下，使用 Lombok 或普通 Java Bean（带 getter/setter）。
+- 节点实现类（如 GenericEventNode）的 setConfig 方法参数类型改为对应的 DTO 类（如 GenericEventConfig），不再接收 Map。
+- 重构过程中，保留原有类的 public 方法签名不变，内部实现逐步替换。
+
+# 改造步骤提示（供 AI 参考）：
+1. 先定义完整的 DTO 类层次。
+2. 修改 NodeFactory，使其支持根据节点类型返回对应的配置 DTO 类型。
+3. 逐个修改节点实现类，将 setConfig 的参数从 Map 改为强类型 DTO。
+4. 修改 RuleEngine，使用 Jackson 将 JSON 直接反序列化为 RuleDefinition。
+5. 删除旧的 JsonNode 遍历逻辑。
+
+
+# 节省 token 要求
+- 回复时只生成必要的代码，不要解释整个文件
+- 修改已有类时，只给出变更的代码块（diff 风格）
+- 不要重复生成已经存在的 import 或包结构
+
+# 对话风格
+- 不要输出“这是您的代码”之类的寒暄语
+- 不要重复我已经知道的背景信息
+- 如果代码只有几行变动，只输出 diff 或变更块
