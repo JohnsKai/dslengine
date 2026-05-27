@@ -1,4 +1,4 @@
-package com.chenk.iot.dslenginecore.event;
+package com.chenk.iot.core.event;
 
 import java.util.regex.Pattern;
 

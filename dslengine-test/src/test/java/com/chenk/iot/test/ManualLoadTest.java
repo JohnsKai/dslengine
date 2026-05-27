@@ -1,10 +1,10 @@
 package com.chenk.iot.test;
 
-import com.chenk.iot.dslenginecore.context.Key;
-import com.chenk.iot.dslenginecore.context.TypedContext;
-import com.chenk.iot.dslenginecore.engine.RuleEngine;
-import com.chenk.iot.dslenginecore.event.IotEvent;
-import com.chenk.iot.dslenginecore.node.GenericEventNode;
+import com.chenk.iot.core.context.Key;
+import com.chenk.iot.core.context.TypedContext;
+import com.chenk.iot.core.engine.RuleEngine;
+import com.chenk.iot.core.event.IotEvent;
+import com.chenk.iot.core.node.GenericEventNode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
