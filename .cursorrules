@@ -22,3 +22,11 @@
 - 不要输出“这是您的代码”之类的寒暄语
 - 不要重复我已经知道的背景信息
 - 如果代码只有几行变动，只输出 diff 或变更块
+
+
+# 项目通用规范
+- 包结构：`com.iot.engine.test` 用于测试框架，`com.iot.engine.test.examples` 用于示例测试。
+- 日志：使用 SLF4J，仅在有需要时记录（测试中可省略）。
+- 断言失败必须抛出 `AssertionError`，不允许使用 `System.out` 报告失败。
+- 测试类命名：以 `Test` 结尾，继承 `TestCase`。
+- 代码简洁，不引入外部依赖（JDK 8 原生）
